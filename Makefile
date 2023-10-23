@@ -42,16 +42,16 @@ build:
 rebuild: stop clean build start
 
 start: build
-	docker-compose -f ./build/yamls/docker-compose.yml up -d
+	docker-compose -f ./build/yamls/docker-compose.yaml up -d
 
 run:
-	docker-compose -f ./build/yamls/docker-compose.yml up -d
+	docker-compose -f ./build/yamls/docker-compose.yaml up -d
 
 stop:
-	docker-compose -f ./build/yamls/docker-compose.yml down
+	docker-compose -f ./build/yamls/docker-compose.yaml down
 
 clean:
-	docker-compose -f ./build/yamls/docker-compose.yml down --rmi all
+	docker-compose -f ./build/yamls/docker-compose.yaml down --rmi all
 	$(GOCLEAN)
 
 lint:
